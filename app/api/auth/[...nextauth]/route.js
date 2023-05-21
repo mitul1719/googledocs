@@ -1,10 +1,9 @@
-import { db } from "@firebase";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { FirebaseAdapter } from "@next-auth/firebase-adapter";
+import { FirestoreAdapter } from "@next-auth/firebase-adapter";
 
-export const authOptions = {
-  // Configure one or more authentication providers
+const handler = NextAuth({
+  adapter: FirestoreAdapter(),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
@@ -12,8 +11,6 @@ export const authOptions = {
     }),
     // ...add more providers here
   ],
-  adapter: FirebaseAdapter(db),
-};
-const handler = NextAuth(authOptions);
+});
 
 export { handler as GET, handler as POST };

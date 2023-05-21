@@ -19,10 +19,9 @@ export default function Home() {
       redirect("/login");
     },
   });
-
   return (
     <div>
-      <Header />
+      <Header session={session} />
       <section className="bg-[#dadce0] pb-10 px-10">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-between py-6">

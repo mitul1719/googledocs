@@ -5,10 +5,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AppsIcon from "@mui/icons-material/Apps";
 import ButtonBase from "@mui/material/ButtonBase";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Button } from "@material-tailwind/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import { signOut } from "next-auth/react";
 
-const Header = () => {
+const Header = ({ session }) => {
   return (
     <div className="flex items-center gap-2 sticky top-0 z-50 px-8 py-2 shadow-md bg-white">
       <ButtonBase centerRipple>
@@ -44,13 +44,23 @@ const Header = () => {
             color="disabled"
           />
         </ButtonBase>
-        <ButtonBase centerRipple>
+
+        {session ? (
+          <Image
+            src={session?.user?.image}
+            alt="profile"
+            height={50}
+            width={50}
+            className="rounded-full cursor-pointer"
+            onClick={signOut}
+          />
+        ) : (
           <AccountCircleIcon
             className="cursor-pointer"
             color="disabled"
             fontSize="large"
           />
-        </ButtonBase>
+        )}
       </section>
     </div>
   );
