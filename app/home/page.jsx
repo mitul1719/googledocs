@@ -31,7 +31,8 @@ const HomePage = ({ children }) => {
       <Header session={session} />
 
       {showDocPage ? (
-        <RichTextEditor name={docName} />
+        // <RichTextEditor name={docName} />
+        <h1>hello</h1>
       ) : (
         <>
           <section className="bg-[#dadce0] pb-10 px-10">
