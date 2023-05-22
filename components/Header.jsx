@@ -22,20 +22,10 @@ const Header = ({ session, children }) => {
     <>
       <div className="flex items-center gap-2 sticky top-0 z-50 px-8 py-2 shadow-md bg-white">
         <ButtonBase centerRipple>
-          <MenuIcon
-            className="cursor-pointer"
-            color="primary"
-            fontSize="medium"
-            onClick={() => setShowNav(!showNav)}
-          />
+          <MenuIcon className="cursor-pointer" color="primary" fontSize="medium" onClick={() => setShowNav(!showNav)} />
         </ButtonBase>
         <ButtonBase centerRipple>
-          <DescriptionIcon
-            className="cursor-pointer"
-            color="primary"
-            fontSize="large"
-            onClick={() => redirect("/")}
-          />
+          <DescriptionIcon className="cursor-pointer" color="primary" fontSize="large" onClick={() => redirect("/")} />
         </ButtonBase>
         <h1 className="ml-2 text-gray-700 text-2xl"> Docs</h1>
         <section className="flex px-5 py-2 rounded-lg flex-grow  justify-center ">
@@ -50,14 +40,10 @@ const Header = ({ session, children }) => {
         </section>
         <section className="flex w-8 justify-center gap-2">
           <ButtonBase centerRipple>
-            <AppsIcon
-              className="cursor-pointer"
-              fontSize="large"
-              color="disabled"
-            />
+            <AppsIcon className="cursor-pointer" fontSize="large" color="disabled" />
           </ButtonBase>
 
-          {session ? (
+          {/* {session ? (
             <Image
               src={session?.user?.image}
               alt="profile"
@@ -72,7 +58,7 @@ const Header = ({ session, children }) => {
               color="disabled"
               fontSize="large"
             />
-          )}
+          )} */}
         </section>
       </div>
       {showNav ? (
@@ -80,41 +66,25 @@ const Header = ({ session, children }) => {
           <div className="flex flex-col gap-7 items-start px-8 py-4">
             <Link href="https://drive.google.com/drive/u/0/" target="blank">
               <ButtonBase centerRipple>
-                <AddToDriveIcon
-                  className="cursor-pointer"
-                  color="primary"
-                  fontSize="medium"
-                />
+                <AddToDriveIcon className="cursor-pointer" color="primary" fontSize="medium" />
                 Drive
               </ButtonBase>
             </Link>
             <Link href="https://slides.google.com/" target="blank">
               <ButtonBase centerRipple>
-                <SlideshowIcon
-                  className="cursor-pointer"
-                  color="primary"
-                  fontSize="medium"
-                />
+                <SlideshowIcon className="cursor-pointer" color="primary" fontSize="medium" />
                 Slides
               </ButtonBase>
             </Link>{" "}
             <Link href="https://forms.google.com/" target="blank">
               <ButtonBase centerRipple>
-                <FormatAlignJustifyIcon
-                  className="cursor-pointer"
-                  color="primary"
-                  fontSize="medium"
-                />
+                <FormatAlignJustifyIcon className="cursor-pointer" color="primary" fontSize="medium" />
                 Forms
               </ButtonBase>{" "}
             </Link>{" "}
             <Link href="https://sheets.google.com/" target="blank">
               <ButtonBase centerRipple>
-                <FunctionsIcon
-                  className="cursor-pointer"
-                  color="primary"
-                  fontSize="medium"
-                />
+                <FunctionsIcon className="cursor-pointer" color="primary" fontSize="medium" />
                 Sheets
               </ButtonBase>
             </Link>{" "}
